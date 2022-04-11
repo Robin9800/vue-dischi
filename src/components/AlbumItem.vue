@@ -22,7 +22,7 @@ export default {
         background-color: hsl(210deg 21% 23%);
         height: 280px;
         max-width: 150px;
-        margin: 20px 20px;
+        margin: 10px 20px;
     }
     .card img{
         align-self: center;
@@ -31,7 +31,7 @@ export default {
         padding: 12px;
     }
     .card h2{
-        font-size: 17px;
+        font-size: 18px;
         margin-top: 10px;
         margin-bottom: 20px;
         color: white;

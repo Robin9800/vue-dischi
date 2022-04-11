@@ -51,7 +51,7 @@ body{
     background-color: hsl(209deg 33% 17%);
 }
 .container{
-    padding: 50px 50px;
+    padding: 40px 200px;
 }
 .cards{
     height: 92vh;
