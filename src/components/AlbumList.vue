@@ -1,7 +1,10 @@
 <template>
   <div class="container">
-      <div v-if="songs.lenght > 0">
-          <AlbumItem :song="songs"/>
+      <div class="cards">
+          <AlbumItem 
+          v-for="item in songs" 
+          :key="item.id"
+          :song="item"/>
       </div>
   </div>
 </template>
@@ -29,10 +32,10 @@ export default {
     methods:{
         loadData(){
             axios.get(this.url).then(
-                (response)=>{
-                    //Se la riposta è positiva
-                    if(response.status===200){
-                        this.songs = response.data;
+                (result)=>{
+                    //Se la riposta è positiva restituisci l'array
+                    if(result.status===200){
+                        this.songs = result.data.response;
                         console.log(this.songs);
                     }
                 }
@@ -44,8 +47,16 @@ export default {
 </script>
 
 <style>
-    main{
-        height: 92vh;
-        background-color: hsl(209deg 33% 17%);
-    }
+body{
+    background-color: hsl(209deg 33% 17%);
+}
+.container{
+    padding: 50px 50px;
+}
+.cards{
+    height: 92vh;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
 </style>

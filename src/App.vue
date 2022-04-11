@@ -7,7 +7,7 @@
 
 <script>
 import Header from "/src/components/Header.vue"
-import AlbumList  from "/src/components/AlbumList.vue"
+import AlbumList from "/src/components/AlbumList.vue"
 
 
 export default {
