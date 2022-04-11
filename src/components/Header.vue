@@ -15,9 +15,6 @@ export default {
     .flex{
         display: flex;
     }
-    .j-center{
-        justify-content: center;
-    }
     .j-start{
         justify-content: start;
     }

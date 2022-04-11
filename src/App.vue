@@ -1,27 +1,29 @@
 <template>
   <div id="app">
     <Header/>
-    <Album/>
+    <AlbumList :url="apiUrl"/>
   </div>
 </template>
 
 <script>
 import Header from "/src/components/Header.vue"
-import Album  from "/src/components/Album.vue"
+import AlbumList  from "/src/components/AlbumList.vue"
 
 
 export default {
   name: 'App',
   components: {
     Header,
-    Album
+    AlbumList
+  },
+  data(){
+    return {
+      apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music'
+    }
   }
 }
 </script>
 
 <style>
 
-#app {
- 
-}
 </style>
