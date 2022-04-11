@@ -1,5 +1,5 @@
 <template>
-  <div>album list</div>
+  <main></main>
 </template>
 
 <script>
@@ -10,5 +10,8 @@ export default {
 </script>
 
 <style>
-
+    main{
+        height: 92vh;
+        background-color: hsl(209deg 33% 17%);
+    }
 </style>
