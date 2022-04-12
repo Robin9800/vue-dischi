@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+      <SearchComponent/>
       <div class="cards">
           <AlbumItem 
           v-for="item in songs" 
@@ -11,7 +12,9 @@
 
 <script>
 import axios from 'axios';
-import AlbumItem from '@/components/AlbumItem'
+import AlbumItem from '@/components/AlbumItem';
+import SearchComponent from '@/components/SearchComponent';
+
 export default {
     name: "AlbumList",
     data(){
@@ -23,7 +26,8 @@ export default {
         url: String
     },
     components: {
-        AlbumItem
+        AlbumItem,
+        SearchComponent
     },
     //Chiamo il metodo che mi fa caricare i dati
     mounted(){
