@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-      <SearchComponent/>
+      <SearchComponent @searchEmit="filterGenre"/>
       <div class="cards">
           <AlbumItem 
-          v-for="item in songs" 
+          v-for="item in filteredSongs" 
           :key="item.id"
           :song="item"/>
       </div>
@@ -19,12 +19,26 @@ export default {
     name: "AlbumList",
     data(){
         return {
-            songs: []
+            songs: [],
+            genreSelected: "*"
         }
     },
     props: {
         url: String
     },
+   computed: {
+       filteredSongs(){
+            const filter = this.genreSelected;
+            if(filter==="*"){
+                return this.songs
+            }else{
+                const filtered = this.songs.filter(function(song){
+                    return song.genre === filter
+                })
+                return filtered
+            } 
+       }
+   },
     components: {
         AlbumItem,
         SearchComponent
@@ -44,6 +58,9 @@ export default {
                     }
                 }
             )
+        },
+        filterGenre(selectedGenre){
+           this.genreSelected = selectedGenre;
         }
     }
 
@@ -55,7 +72,7 @@ body{
     background-color: hsl(209deg 33% 17%);
 }
 .container{
-    padding: 40px 200px;
+    padding: 20px 200px;
 }
 .cards{
     height: 92vh;

@@ -1,10 +1,14 @@
 <template>
   <div class="search">
-      <input type="text" placeholder="Search" 
-      v-model="inputText" 
-      @keyup.enter="performSearch" />
-      <button @keyup.enter="performSearch">Cerca</button>
-    </div>
+      <select v-model="selectedGenre"
+      @change="$emit('searchEmit', selectedGenre)">
+            <option value="*">All categories</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Metal">Metal</option>
+            <option value="Jazz">Jazz</option>
+        </select>
+  </div>
 </template>
 
 <script>
@@ -12,14 +16,7 @@ export default {
     name: 'SearchComponent',
     data(){
         return {
-            //Il valore di input text sarà una stringa
-            inputText: ''
-        }
-    },
-    methods: {
-        //creo la funzione che andrò ad inserire nel keyup.enter
-        performSearch(){
-            this.$emit('search',this.inputText);
+            selectedGenre: '*'
         }
     }
 }
@@ -31,13 +28,16 @@ export default {
         margin-bottom: 20px;
         flex-direction: column;
     }
-    .search input{
+    .search select{
         width: 200px;
         align-self: center;
         margin: 6px 0px;
+        background-color: hsl(210deg 15% 23%);
+        color: white;
     }
     .search button{
         width: 50px;
         align-self: center;
+        margin-top: 6px
     }
 </style>

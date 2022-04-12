@@ -4,6 +4,7 @@
       <h2>{{song.title}}</h2>
       <h3>{{song.author}}</h3>
       <h4>{{song.year}}</h4>
+      <h5>{{song.genre}}</h5>
   </div>
 </template>
 
@@ -20,8 +21,8 @@ export default {
     .card{
         text-align: center;
         background-color: hsl(210deg 21% 23%);
-        height: 280px;
-        max-width: 150px;
+        height: 300px;
+        max-width: 160px;
         margin: 10px 20px;
     }
     .card img{
@@ -33,10 +34,13 @@ export default {
     .card h2{
         font-size: 18px;
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
         color: white;
     }
-    .card h3,h4{
+    .card h3,h4,h5{
         color: grey;
+    }
+    .card h5{
+        margin-top: 10px;
     }
 </style>
